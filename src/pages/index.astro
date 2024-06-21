@@ -1,6 +1,9 @@
 ---
 import Container from "../components/Container.astro";
 import Layout from "../layouts/MainLayout.astro";
+import { getRoadmapsByTag } from "../lib/roadmap";
+
+const roadmapsBySkill = await getRoadmapsByTag("skill-based");
 ---
 
 <Layout>
@@ -12,5 +15,21 @@ import Layout from "../layouts/MainLayout.astro";
         </h1>
       </div>
     </main>
+
+    <div class="space-y-2">
+      <h1>Skill Based Roadmap</h1>
+      {
+        roadmapsBySkill
+          .filter((roadmapItem) => !roadmapItem.frontmatter.isHidden)
+          .map((roadmapItem) => (
+            <a
+              href={roadmapItem.id}
+              class="px-4 py-2 border block w-fit rounded"
+            >
+              {roadmapItem.frontmatter.briefTitle}
+            </a>
+          ))
+      }
+    </div>
   </Container>
 </Layout>
