@@ -2,7 +2,6 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-
 interface Props {
   title?: string;
 }
@@ -14,10 +13,10 @@ const { title = SITE_DESCRIPTION } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={SITE_DESCRIPTION} />
     <meta name="viewport" content="width=device-width" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-    <meta name="generator" content={SITE_DESCRIPTION} />
+    <meta name="generator" content={Astro.generator} />
     <title>{SITE_TITLE} - {title}</title>
   </head>
   <body>
