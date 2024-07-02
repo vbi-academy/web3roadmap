@@ -1,0 +1,18 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Container from "../../components/Container.astro";
+import RoadMapDrawer from "../../components/RoadmapDrawer/RoadMapDrawer.tsx";
+
+const { roadmapId } = Astro.params;
+
+// const roadmapFile = await import(
+//   `../../data/roadmaps/${roadmapId}/${roadmapId}.md`
+// );
+---
+
+<MainLayout>
+  <Container>
+    {roadmapId}
+    <RoadMapDrawer client:load />
+  </Container>
+</MainLayout>
