@@ -1,12 +1,6 @@
 ---
 import "@fontsource/poppins";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
-import Layout from "../components/Layout.astro";
-interface Props {
-  title?: string;
-}
-
-const { title = SITE_DESCRIPTION } = Astro.props;
 
 import "@fontsource/poppins/100.css";
 import "@fontsource/poppins/200.css";
@@ -17,6 +11,34 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
+
+import FixedSidebar from "@components/sidebar/FixedSidebar.astro";
+import Intro from "@components/Intro.astro";
+import RoadmapIntro from "@components/RoadmapIntro.astro";
+import IntroFooter from "@components/IntroFooter.astro";
+import Timeline from "@components/Timeline.astro";
+
+type LayoutType = "default" | "roadmapReader";
+
+interface Props {
+  type?: LayoutType;
+  title?: string;
+  icon?: string;
+  description?: string;
+  documentationLink?: string;
+  githubLink?: string;
+}
+
+const {
+  type = "default",
+  title = SITE_DESCRIPTION,
+  icon,
+  description,
+  documentationLink,
+  githubLink,
+} = Astro.props;
+
+const pageTitle = `${SITE_TITLE} - ${title}`;
 ---
 
 <!doctype html>
@@ -27,10 +49,34 @@ import "@fontsource/poppins/900.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{SITE_TITLE} - {title}</title>
+    <title>{pageTitle}</title>
   </head>
-  <body class="flex min-h-full flex-col bg-white">
-    <Layout><slot /></Layout>
+  <body class="flex min-h-full flex-col bg-gray-950">
+    <Fragment>
+      <FixedSidebar>
+        {
+          type === "default" ? (
+            <Intro slot="main" />
+          ) : (
+            <RoadmapIntro
+              icon={icon}
+              title={title}
+              description={description}
+              documentationLink={documentationLink}
+              githubLink={githubLink}
+              slot="main"
+            />
+          )
+        }
+        <IntroFooter slot="footer" />
+      </FixedSidebar>
+      <div class="relative flex-auto">
+        <Timeline />
+        <main class="py-20 sm:py-32">
+          <slot />
+        </main>
+      </div>
+    </Fragment>
     <style is:global>
       /* Improve Page Speed */
       img {
