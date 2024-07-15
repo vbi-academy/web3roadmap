@@ -1,0 +1,86 @@
+[
+  {
+    "phase_id": 1,
+    "phase_name": "Introduction",
+    "topics": [
+      {
+        "topic_id": "what-is-rust",
+        "topic_name": "What is Rust?",
+        "subtopics": [
+          {
+            "subtopic_id": 1,
+            "subtopic_name": "Why use Rust?"
+          }
+        ]
+      },
+      {
+        "topic_id": 2,
+        "topic_name": "Memory Safety and Zero-Cost Abstractions"
+      },
+      {
+        "topic_id": 3,
+        "topic_name": "Setting Up the Development Environment",
+        "subtopics": [
+          {
+            "subtopic_id": 1,
+            "subtopic_name": "Installing Rust and Cargo"
+          },
+          {
+            "subtopic_id": 2,
+            "subtopic_name": "IDEs and Rust Toolchains"
+          },
+          {
+            "subtopic_id": 3,
+            "subtopic_name": "Rust REPL (Rust Playground)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "phase_id": 2,
+    "phase_name": "Language Basics",
+    "topics": [
+      {
+        "topic_id": 1,
+        "topic_name": "Syntax and Semantics",
+        "subtopics": [
+          {
+            "subtopic_id": 1,
+            "subtopic_name": "Variables, Constants, and Data Types"
+          },
+          {
+            "subtopic_id": 2,
+            "subtopic_name": "Control Flow Constructs"
+          },
+          {
+            "subtopic_id": 3,
+            "subtopic_name": "Functions and Method Syntax"
+          },
+          {
+            "subtopic_id": 4,
+            "subtopic_name": "Pattern Matching and Destructuring"
+          }
+        ]
+      },
+      {
+        "topic_id": 2,
+        "topic_name": "Ownership System",
+        "subtopics": [
+          {
+            "subtopic_id": 1,
+            "subtopic_name": "Ownership Rules and Memory Safety"
+          },
+          {
+            "subtopic_id": 2,
+            "subtopic_name": "Borrowing, References, and Slices"
+          },
+          {
+            "subtopic_id": 3,
+            "subtopic_name": "Deep Dive: Stack vs Heap"
+          }
+        ]
+      }
+    ]
+  }
+]
