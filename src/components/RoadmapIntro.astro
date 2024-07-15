@@ -1,0 +1,50 @@
+---
+import IconLink from "./IconLink.astro";
+import bookIcon from "@assets/icons/book-icon.svg?raw";
+import githubIcon from "@assets/icons/github-icon.svg?raw";
+import rocketFlying from "@assets/gif/rocket-flying.gif";
+
+interface Props {
+  icon?: string;
+  title?: string;
+  description?: string;
+  documentationLink?: string;
+  githubLink?: string;
+}
+
+const { icon, title, description, documentationLink, githubLink } = Astro.props;
+---
+
+<Fragment>
+  <a href="/" class="text-white text-2xl font-semibold flex gap-2 items-center">
+    <img src={rocketFlying.src} class="w-7 h-7" />
+    <p>
+      <span class="text-sky-300">web3</span><span>roadmap</span>
+    </p>
+  </a>
+  <h1 class="mt-14 font-display text-3xl/tight font-light text-white">
+    {title}
+  </h1>
+  <p class="mt-4 text-sm/6 text-gray-300">
+    {description}
+  </p>
+
+  <div
+    class="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start"
+  >
+    {
+      documentationLink && (
+        <IconLink href={documentationLink} icon={bookIcon}>
+          Documentation
+        </IconLink>
+      )
+    }
+    {
+      githubLink && (
+        <IconLink href={githubLink} icon={githubIcon}>
+          Github
+        </IconLink>
+      )
+    }
+  </div>
+</Fragment>
