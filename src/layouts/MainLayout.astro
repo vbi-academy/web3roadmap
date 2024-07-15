@@ -1,8 +1,7 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
 import "@fontsource/poppins";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import Layout from "../components/Layout.astro";
 interface Props {
   title?: string;
 }
@@ -21,25 +20,17 @@ import "@fontsource/poppins/900.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full antialiased">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={SITE_DESCRIPTION} />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{SITE_TITLE} - {title}</title>
   </head>
-  <body>
-    <div class="fixed w-full">
-      <Navbar />
-    </div>
-
-    <div class="pt-20">
-      <slot />
-    </div>
-
-    <Footer />
+  <body class="flex min-h-full flex-col bg-white">
+    <Layout><slot /></Layout>
     <style is:global>
       /* Improve Page Speed */
       img {
