@@ -1,0 +1,26 @@
+---
+import { getRoadmapsByTag } from "../lib/roadmap";
+
+interface Props {
+  roadMapTag: string;
+}
+
+const { roadMapTag } = Astro.props;
+const roadmapsBySkill = await getRoadmapsByTag(roadMapTag);
+---
+
+<div class="flex gap-2">
+  {
+    roadmapsBySkill
+      .filter((roadmapItem) => !roadmapItem.frontmatter.isHidden)
+      .map((roadmapItem) => (
+        <a
+          href={roadmapItem.id}
+          class="group relative isolate flex-none rounded-md py-1.5 text-base font-semibold px-2.5 border border-gray-800"
+        >
+          <span class="absolute inset-0 rounded-md bg-gradient-to-b from-white/80 to-white opacity-10 transition-opacity group-hover:opacity-15" />
+          {roadmapItem.frontmatter.briefTitle}
+        </a>
+      ))
+  }
+</div>
