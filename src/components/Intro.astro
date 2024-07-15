@@ -1,0 +1,25 @@
+---
+import IconLink from "./IconLink.astro";
+import bookIcon from "@assets/icons/book-icon.svg?raw";
+import githubIcon from "@assets/icons/github-icon.svg?raw";
+---
+
+<Fragment>
+  <a href="/">Web3Roadmap</a>
+  <h1 class="mt-14 font-display text-3xl/tight font-light text-white">
+    Open-source roadmap{" "}
+    <span class="text-sky-300">for next-gen developers</span>
+  </h1>
+  <p class="mt-4 text-sm/6 text-gray-300">
+    Comprehensive, community-driven guide for aspiring blockchain and
+    decentralized application developers. Navigate through curated resources,
+    hands-on projects, and industry insights to master the skills needed for the
+    decentralized future.
+  </p>
+  <div
+    class="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start"
+  >
+    <IconLink href="#" icon={bookIcon}> Documentation </IconLink>
+    <IconLink href="#" icon={githubIcon}> Github </IconLink>
+  </div>
+</Fragment>
