@@ -1,18 +1,125 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import Container from "../../components/Container.astro";
-import RoadMapDrawer from "../../components/RoadmapDrawer/RoadMapDrawer.tsx";
+import type { Params } from "astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import ContentWrapper from "@components/ContentWrapper.astro";
+import ArticleHeader from "@components/ArticleHeader.astro";
+import type { RoadmapFrontmatter } from "src/lib/roadmap";
+import Modal from "@components/Modal";
 
-const { roadmapId } = Astro.params;
+interface Resource {
+  name: string;
+  url: string;
+}
 
-// const roadmapFile = await import(
-//   `../../data/roadmaps/${roadmapId}/${roadmapId}.md`
-// );
+interface Subtopic {
+  subtopic_id: number;
+  subtopic_name: string;
+}
+
+interface Topic {
+  topic_id: number;
+  topic_name: string;
+  resources?: Resource[];
+  subtopics?: Subtopic[];
+}
+
+interface Phase {
+  phase_id: number;
+  phase_name: string;
+  topics: Topic[];
+}
+
+const { roadmapId } = Astro.params as Params;
+
+let roadmapData: RoadmapFrontmatter | null = null;
+let roadmapJsonData: Phase[] | null = null;
+let error: Error | null = null;
+let topicRecords: Record<string, string> = {};
+
+try {
+  const roadmapFile = await import(
+    `../../data/roadmaps/${roadmapId}/${roadmapId}.md`
+  );
+  roadmapData = roadmapFile.frontmatter as RoadmapFrontmatter;
+
+  const roadmapJson = await import(
+    `../../data/roadmaps/${roadmapId}/${roadmapId}.json`
+  );
+  roadmapJsonData = roadmapJson.default as Phase[];
+} catch (e) {
+  error = e instanceof Error ? e : new Error("An unknown error occurred");
+  console.error(`Error loading roadmap data for ${roadmapId}:`, error);
+}
+
+if (error || !roadmapData) {
+  return Astro.redirect("/404");
+}
 ---
 
-<MainLayout>
-  <Container>
-    {roadmapId}
-    <RoadMapDrawer client:load />
-  </Container>
+<MainLayout
+  type="roadmapReader"
+  title={roadmapData.title}
+  description={roadmapData.description}
+  documentationLink={roadmapData.description}
+  githubLink={roadmapData.github}
+>
+  {
+    roadmapJsonData &&
+      roadmapJsonData.map((phase: Phase) => (
+        <>
+          <div class="space-y-7 sm:space-y-10">
+            <ArticleHeader step={phase.phase_name} />
+            <ContentWrapper class="mb-8 text-white">
+              <ol class="relative border-s border-gray-200">
+                {phase.topics.map((topic: Topic) => (
+                  <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+                    <h3
+                      class="pt-1 mb-1 text-base font-normal leading-none text-white topic-title cursor-pointer hover:underline"
+                      data-topic-id={topic.topic_id}
+                    >
+                      {topic.topic_name}
+                    </h3>
+                    {topic.subtopics && (
+                      <ul class="list-disc list-inside text-sm space-y-2 mt-3 ">
+                        {topic.subtopics.map((subtopic: Subtopic) => (
+                          <li
+                            class="topic-title cursor-pointer hover:underline"
+                            data-topic-id={topic.topic_id}
+                          >
+                            {subtopic.subtopic_name}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </ContentWrapper>
+          </div>
+
+          <Modal client:load />
+        </>
+      ))
+  }
 </MainLayout>
+
+<script>
+  import { useModalStore } from "@stores/modalStore";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const { openModal } = useModalStore.getState();
+
+    // Add click event listeners to all topic titles
+    document.querySelectorAll(".topic-title").forEach((topicElement) => {
+      topicElement.addEventListener("click", () => {
+        const topicName = topicElement.textContent || "Unknown Topic";
+        const topicId = topicElement.getAttribute("data-topic-id");
+        openModal(
+          topicName,
+          `This is the content for ${topicName} (ID: ${topicId})`
+        );
+      });
+    });
+  });
+</script>
