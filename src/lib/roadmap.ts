@@ -7,6 +7,7 @@ export type RoadmapFrontmatter = {
   tags: string[];
   order: number;
   isHidden: boolean;
+  github: string;
 };
 
 export type RoadmapFileType = MarkdownFileType<RoadmapFrontmatter> & {
