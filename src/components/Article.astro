@@ -1,0 +1,13 @@
+---
+import ArticleHeader from "./ArticleHeader.astro";
+import ContentWrapper from "./ContentWrapper.astro";
+
+const { id, date } = Astro.props;
+---
+
+<article id={id} class="scroll-mt-16">
+  <ArticleHeader id={id} date={date} />
+  <ContentWrapper className="typography" data-mdx-content>
+    <slot />
+  </ContentWrapper>
+</article>
