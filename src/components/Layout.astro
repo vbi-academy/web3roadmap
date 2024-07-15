@@ -1,0 +1,20 @@
+---
+import FixedSidebar from "./sidebar/FixedSidebar.astro";
+import Timeline from "./Timeline.astro";
+import Intro from "./Intro.astro";
+import "@fontsource/poppins";
+import IntroFooter from "./IntroFooter.astro";
+---
+
+<Fragment>
+  <FixedSidebar>
+    <Intro slot="main" />
+    <IntroFooter slot="footer" />
+  </FixedSidebar>
+  <div class="relative flex-auto">
+    <Timeline />
+    <main class="space-y-20 py-20 sm:space-y-32 sm:py-32">
+      <slot />
+    </main>
+  </div>
+</Fragment>
