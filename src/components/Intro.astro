@@ -2,10 +2,16 @@
 import IconLink from "./IconLink.astro";
 import bookIcon from "@assets/icons/book-icon.svg?raw";
 import githubIcon from "@assets/icons/github-icon.svg?raw";
+import rocketFlying from "@assets/gif/rocket-flying.gif";
 ---
 
 <Fragment>
-  <a href="/">Web3Roadmap</a>
+  <a href="/" class="text-white text-2xl font-semibold flex gap-2 items-center">
+    <img src={rocketFlying.src} class="w-7 h-7" />
+    <p>
+      <span class="text-sky-300">web3</span><span>roadmap</span>
+    </p>
+  </a>
   <h1 class="mt-14 font-display text-3xl/tight font-light text-white">
     Open-source roadmap{" "}
     <span class="text-sky-300">for next-gen developers</span>
