@@ -1,0 +1,23 @@
+---
+import { getRoadmapsByTag } from "../lib/roadmap";
+
+const roadmapsBySkill = await getRoadmapsByTag("role-based");
+---
+
+<div class="space-y-2">
+  <h1 class="text-lg font-medium">Skill Based Roadmap</h1>
+  <div class="flex gap-2">
+    {
+      roadmapsBySkill
+        .filter((roadmapItem) => !roadmapItem.frontmatter.isHidden)
+        .map((roadmapItem) => (
+          <a
+            href={roadmapItem.id}
+            class="px-4 py-2.5 border block w-fit rounded-lg text-base"
+          >
+            {roadmapItem.frontmatter.briefTitle}
+          </a>
+        ))
+    }
+  </div>
+</div>
