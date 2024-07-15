@@ -1,0 +1,13 @@
+---
+export interface Props {
+  icon: string;
+  class?: string;
+  [key: string]: any;
+}
+
+const { icon, class: className, ...rest } = Astro.props;
+---
+
+<span class={className} {...rest}>
+  <Fragment set:html={icon} />
+</span>

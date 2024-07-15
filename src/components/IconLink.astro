@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+
+export interface Props {
+  href: string;
+  icon: string;
+  compact?: boolean;
+  large?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  icon,
+  compact = false,
+  large = false,
+  class: className,
+} = Astro.props;
+
+const linkClass = `group relative isolate flex items-center rounded-lg px-2 py-0.5 text-[0.8125rem]/6 font-medium text-white/30 transition-colors hover:text-sky-300 ${compact ? "gap-x-2" : "gap-x-3"} ${className || ""}`;
+
+const iconClass = `flex-none ${large ? "h-6 w-6" : "h-4 w-4"}`;
+---
+
+<a href={href} class={linkClass}>
+  <span
+    class="absolute inset-0 -z-10 scale-75 rounded-lg bg-white/5 opacity-0 transition group-hover:scale-100 group-hover:opacity-100"
+  ></span>
+  <Icon icon={icon} class={iconClass} />
+  <span class="self-baseline text-white"><slot /></span>
+</a>
