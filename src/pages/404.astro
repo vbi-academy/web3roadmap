@@ -1,15 +1,26 @@
 ---
-import Container from "../components/Container.astro";
-import MainLayout from "../layouts/MainLayout.astro";
+import ContentWrapper from "@components/ContentWrapper.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import notFoundAnimation from "@assets/gif/notfound-animation.gif";
+import Button from "@components/Button.astro";
 ---
 
 <MainLayout title="404 Not Found">
-  <Container>
-    <div class="min-h-[calc(100vh-16rem)] flex justify-center items-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">404</h1>
-        <p class="text-lg mt-4 text-slate-600">Page not found.</p>
+  <ContentWrapper>
+    <div class="w-full h-full flex justify-center items-center">
+      <div class="text-start space-y-4 flex flex-col items-start">
+        <img
+          src={notFoundAnimation.src}
+          width={300}
+          height={300}
+          alt="404 Not Found - Animated illustration"
+        />
+        <p class="text-lg text-gray-300">
+          We couldn't find the page you're looking for. It might have been
+          moved, deleted, or never existed.
+        </p>
+        <Button href="/" arrow>Go to Homepage</Button>
       </div>
     </div>
-  </Container>
-</MainLayout>
+  </ContentWrapper></MainLayout
+>
