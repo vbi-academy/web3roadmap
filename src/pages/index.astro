@@ -1,35 +1,39 @@
 ---
-import Container from "../components/Container.astro";
-import Layout from "../layouts/MainLayout.astro";
-import { getRoadmapsByTag } from "../lib/roadmap";
-
-const roadmapsBySkill = await getRoadmapsByTag("skill-based");
+import ContentWrapper from "@components/ContentWrapper.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import RoadMapTagList from "@components/RoadMapTagList.astro";
+import Icon from "@components/Icon.astro";
+import workIcon from "@assets/icons/work-icon.svg?raw";
+import circleStackIcon from "@assets/icons/circle-stack-icon.svg?raw";
+import cubeIcon from "@assets/icons/cube-icon.svg?raw";
 ---
 
-<Layout>
-  <Container>
-    <main>
-      <div class="flex justify-start items-center">
-        <h1 class="text-4xl font-bold text-center py-14">
-          Opensource Roadmap For Next-Gen Developers
-        </h1>
+<MainLayout
+  ><ContentWrapper class="space-y-4 py-20 sm:space-y-10 sm:py-10 text-white">
+    <div class="space-y-2">
+      <div class="flex gap-2">
+        <Icon icon={circleStackIcon} class="w-6 h-6 text-white" />
+        <h2 class="text-lg">Skill Based Roadmap</h2>
       </div>
-    </main>
+
+      <RoadMapTagList roadMapTag="skill-based" />
+    </div>
+    <div class="space-y-2">
+      <div class="flex gap-2">
+        <Icon icon={workIcon} class="w-6 h-6 text-white" />
+        <h2 class="text-lg">Role Based Roadmap</h2>
+      </div>
+
+      <RoadMapTagList roadMapTag="role-based" />
+    </div>
 
     <div class="space-y-2">
-      <h1>Skill Based Roadmap</h1>
-      {
-        roadmapsBySkill
-          .filter((roadmapItem) => !roadmapItem.frontmatter.isHidden)
-          .map((roadmapItem) => (
-            <a
-              href={roadmapItem.id}
-              class="px-4 py-2 border block w-fit rounded"
-            >
-              {roadmapItem.frontmatter.briefTitle}
-            </a>
-          ))
-      }
+      <div class="flex gap-2">
+        <Icon icon={cubeIcon} class="w-6 h-6 text-white" />
+        <h2 class="text-lg">Protocol Roadmap</h2>
+      </div>
+
+      <RoadMapTagList roadMapTag="protocol" />
     </div>
-  </Container>
-</Layout>
+  </ContentWrapper></MainLayout
+>
