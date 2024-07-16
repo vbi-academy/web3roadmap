@@ -2,7 +2,7 @@
 import IconLink from "./IconLink.astro";
 import bookIcon from "@assets/icons/book-icon.svg?raw";
 import githubIcon from "@assets/icons/github-icon.svg?raw";
-import rocketFlying from "@assets/gif/rocket-flying.gif";
+import Logo from "./Logo.astro";
 
 interface Props {
   icon?: string;
@@ -16,12 +16,7 @@ const { icon, title, description, documentationLink, githubLink } = Astro.props;
 ---
 
 <Fragment>
-  <a href="/" class="text-white text-2xl font-semibold flex gap-2 items-center">
-    <img src={rocketFlying.src} class="w-7 h-7" />
-    <p>
-      <span class="text-sky-300">web3</span><span>roadmap</span>
-    </p>
-  </a>
+  <Logo />
   <h1 class="mt-14 font-display text-3xl/tight font-light text-white">
     {title}
   </h1>
