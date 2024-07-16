@@ -1,0 +1,83 @@
+---
+import ContentWrapper from "@components/ContentWrapper.astro";
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<div
+  id={id}
+  data-dialog={id}
+  class="fixed w-screen h-screen top-0 left-0 bg-gray-950 text-white hidden"
+>
+  <ContentWrapper class="py-20">
+    <div
+      class="flex gap-2 cursor-pointer transition-all hover:-translate-x-1 active:-translate-x-1"
+      id={`${id}-close`}
+      data-dialog-close={id}
+    >
+      <!-- <img src={arrowLeft.src} className="w-6 h-6 text-white" /> -->
+      Back
+    </div>
+    <h2 id={`${id}-title`} class="text-2xl font-bold mb-4"></h2>
+    <div id={`${id}-content`} class="mb-4">
+      <slot />
+    </div>
+    <!-- <div class="flex flex-col">
+      <h2 id={`${id}-title`} class="text-2xl font-bold mb-4"></h2>
+      <div id={`${id}-content`} class="mb-4">
+        <slot />
+      </div>
+      <button
+        id={`${id}-close`}
+        data-dialog-close={id}
+        class="self-end bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+      >
+        Close
+      </button>
+    </div> -->
+  </ContentWrapper>
+</div>
+
+<script define:vars={{ id }} is:inline>
+  function setupModal() {
+    const modal = document.getElementById(id);
+    const modalTitle = document.getElementById(`${id}-title`);
+    const modalContent = document.getElementById(`${id}-content`);
+    const closeModalBtn = document.getElementById(`${id}-close`);
+
+    function openModal(title, content) {
+      if (modalTitle && modalContent && modal) {
+        modalTitle.textContent = title;
+        modalContent.innerHTML = content;
+        modal.classList.remove("hidden");
+        modal.classList.add("block");
+      }
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.remove("block");
+        modal.classList.add("hidden");
+      }
+    }
+
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener("click", closeModal);
+    }
+
+    if (!window.modals) {
+      window.modals = {};
+    }
+    window.modals[id] = { openModal, closeModal };
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupModal);
+  } else {
+    setupModal();
+  }
+</script>

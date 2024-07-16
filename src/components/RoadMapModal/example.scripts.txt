@@ -1,0 +1,9 @@
+// This script for usingg modal outside this component
+
+<script>
+  import { setupModalHandlers } from "@scripts/modalHandler";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setupModalHandlers();
+  });
+</script>
