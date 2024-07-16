@@ -1,6 +1,8 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",
@@ -9,7 +11,9 @@
       "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"],
       "@stores/*": ["src/stores/*"],
-      "@scripts/*": ["src/scripts/*"]
+      "@scripts/*": ["src/scripts/*"],
+      "@lib/*": ["src/lib/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }
