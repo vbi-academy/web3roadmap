@@ -16,7 +16,7 @@ const roadmapsBySkill = await getRoadmapsByTag(roadMapTag);
       .map((roadmapItem) => (
         <a
           href={roadmapItem.id}
-          class="group relative isolate flex-none rounded-md py-1.5 text-base font-semibold px-2.5 border border-gray-800"
+          class="group relative isolate flex-none rounded-md py-1.5 text-base font-normal px-5 border border-gray-800"
         >
           <span class="absolute inset-0 rounded-md bg-gradient-to-b from-white/80 to-white opacity-10 transition-opacity group-hover:opacity-15" />
           {roadmapItem.frontmatter.briefTitle}
