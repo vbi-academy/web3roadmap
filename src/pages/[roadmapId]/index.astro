@@ -3,30 +3,16 @@ import type { Params } from "astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import ContentWrapper from "@components/ContentWrapper.astro";
 import ArticleHeader from "@components/ArticleHeader.astro";
-import type { RoadmapFrontmatter } from "src/lib/roadmap";
-import Modal from "@components/Modal";
+import RoadmapModal from "@components/RoadmapModal/RoadmapModal";
+import { getRoadmapIds, type RoadmapFrontmatter } from "@lib/roadmap";
+import type { Phase, Subtopic, Topic } from "@lib/type";
 
-interface Resource {
-  name: string;
-  url: string;
-}
+export async function getStaticPaths() {
+  const roadmapIds = await getRoadmapIds();
 
-interface Subtopic {
-  subtopic_id: number;
-  subtopic_name: string;
-}
-
-interface Topic {
-  topic_id: number;
-  topic_name: string;
-  resources?: Resource[];
-  subtopics?: Subtopic[];
-}
-
-interface Phase {
-  phase_id: number;
-  phase_name: string;
-  topics: Topic[];
+  return roadmapIds.map((roadmapId) => ({
+    params: { roadmapId },
+  }));
 }
 
 const { roadmapId } = Astro.params as Params;
@@ -34,7 +20,6 @@ const { roadmapId } = Astro.params as Params;
 let roadmapData: RoadmapFrontmatter | null = null;
 let roadmapJsonData: Phase[] | null = null;
 let error: Error | null = null;
-let topicRecords: Record<string, string> = {};
 
 try {
   const roadmapFile = await import(
@@ -76,6 +61,7 @@ if (error || !roadmapData) {
                     <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
                     <h3
                       class="pt-1 mb-1 text-base font-normal leading-none text-white topic-title cursor-pointer hover:underline"
+                      data-roadmap-id={roadmapId}
                       data-topic-id={topic.topic_id}
                     >
                       {topic.topic_name}
@@ -85,7 +71,8 @@ if (error || !roadmapData) {
                         {topic.subtopics.map((subtopic: Subtopic) => (
                           <li
                             class="topic-title cursor-pointer hover:underline"
-                            data-topic-id={topic.topic_id}
+                            data-roadmap-id={roadmapId}
+                            data-topic-id={subtopic.subtopic_id}
                           >
                             {subtopic.subtopic_name}
                           </li>
@@ -98,7 +85,7 @@ if (error || !roadmapData) {
             </ContentWrapper>
           </div>
 
-          <Modal client:load />
+          <RoadmapModal client:load />
         </>
       ))
   }
@@ -110,15 +97,16 @@ if (error || !roadmapData) {
   document.addEventListener("DOMContentLoaded", () => {
     const { openModal } = useModalStore.getState();
 
-    // Add click event listeners to all topic titles
     document.querySelectorAll(".topic-title").forEach((topicElement) => {
       topicElement.addEventListener("click", () => {
-        const topicName = topicElement.textContent || "Unknown Topic";
+        const roadmapId = topicElement.getAttribute("data-roadmap-id");
         const topicId = topicElement.getAttribute("data-topic-id");
-        openModal(
-          topicName,
-          `This is the content for ${topicName} (ID: ${topicId})`
-        );
+
+        if (!roadmapId || !topicId) {
+          console.error("Missing roadmapId or topicId");
+          return;
+        }
+        openModal(roadmapId, topicId);
       });
     });
   });
