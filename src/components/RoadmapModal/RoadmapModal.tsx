@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useModalStore } from "@stores/modalStore";
 import arrowLeft from "@assets/icons/arrow-uturn-left-icon.svg";
-import { httpGet } from "src/lib/http";
+import { httpGet } from "@lib/http";
 import "./markdown-styles.css";
 import processCustomTags from "./processCustomTags";
 
