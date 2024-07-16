@@ -13,3 +13,14 @@ Rust is a modern systems programming language designed to be safe, concurrent, a
 5. **Modern Features**: Rust incorporates modern programming language features such as pattern matching, generics, and a powerful type system.
 
 In essence, Rust aims to provide the performance and control of low-level languages like C and C++ while offering the safety and ease of use typically associated with high-level languages. This combination makes Rust a powerful tool for developers who need to build reliable and efficient software systems.
+
+```rust
+fn main() {
+    println!("Hello World!");
+}
+```
+
+Resources:
+- [@official@Rust Language Documentation](https://www.rust-lang.org/learn)
+  
+[@opensource@]()
