@@ -10,4 +10,20 @@ export default defineConfig({
     mode: "standalone",
   }),
   integrations: [react(), tailwind()],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("roadmaps")) {
+              return "roadmaps";
+            }
+          },
+        },
+      },
+    },
+    optimizeDeps: {
+      include: ["src/data/roadmaps/**/*.md"],
+    },
+  },
 });
