@@ -12,11 +12,11 @@ import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
 
-import FixedSidebar from "@components/sidebar/FixedSidebar.astro";
+import FixedSidebar from "@components/FixedSidebar/FixedSidebar.astro";
 import Intro from "@components/Intro.astro";
-import RoadmapIntro from "@components/RoadmapIntro.astro";
 import IntroFooter from "@components/IntroFooter.astro";
 import Timeline from "@components/Timeline.astro";
+import RoadMapIntro from "@components/RoadMapIntro.astro";
 
 type LayoutType = "default" | "roadmapReader";
 
@@ -58,7 +58,7 @@ const pageTitle = `${SITE_TITLE} - ${title}`;
           type === "default" ? (
             <Intro slot="main" />
           ) : (
-            <RoadmapIntro
+            <RoadMapIntro
               icon={icon}
               title={title}
               description={description}
