@@ -1,7 +1,7 @@
 .markdown-content {
     color: #ffffff;
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .markdown-content h1,
@@ -11,13 +11,13 @@
 .markdown-content h5,
 .markdown-content h6 {
     margin-top: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-weight: 600;
     line-height: 1.25;
 }
 
 .markdown-content h1 {
-    font-size: 2em;
+    font-size: 24px;
 }
 
 .markdown-content h2 {
@@ -42,7 +42,7 @@
 
 .markdown-content p {
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .markdown-content a {
@@ -67,8 +67,8 @@
 .markdown-content ul,
 .markdown-content ol {
     padding-left: 2em;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 
 .markdown-content ol {
@@ -107,7 +107,7 @@
 
 .markdown-content pre {
     padding: 16px;
-    margin: 10px 0;
+    margin: 18px 0;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
