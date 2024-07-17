@@ -4,6 +4,7 @@ import arrowLeft from "@assets/icons/arrow-uturn-left-icon.svg";
 import { httpGet } from "@lib/http";
 import "./markdown-styles.css";
 import processCustomTags from "./processCustomTags";
+import LoadingIcon from "@components/LoadingIcon";
 
 const RoadmapModal: React.FC = () => {
   const { isOpen, roadmapId, topicId, closeModal } = useModalStore();
@@ -72,7 +73,7 @@ const RoadmapModal: React.FC = () => {
               <img src={arrowLeft.src} alt="Back" className="w-6 h-6" />
               Back
             </button>
-            {/* {isLoading && <LoadingIcon />} */}
+            {isLoading && <LoadingIcon />}
             {error && <p className="text-red-500">{error}</p>}
             {!isLoading && !error && (
               <div
