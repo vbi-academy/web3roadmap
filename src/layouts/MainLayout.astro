@@ -1,7 +1,12 @@
 ---
-import "@fontsource/poppins";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../constants";
+import FixedSidebar from "@components/FixedSidebar/FixedSidebar.astro";
+import Intro from "@components/Intro.astro";
+import IntroFooter from "@components/IntroFooter.astro";
+import Timeline from "@components/Timeline.astro";
+import RoadMapIntro from "@components/RoadMapIntro.astro";
 
+import "@fontsource/poppins";
 import "@fontsource/poppins/100.css";
 import "@fontsource/poppins/200.css";
 import "@fontsource/poppins/300.css";
@@ -11,12 +16,6 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
-
-import FixedSidebar from "@components/FixedSidebar/FixedSidebar.astro";
-import Intro from "@components/Intro.astro";
-import IntroFooter from "@components/IntroFooter.astro";
-import Timeline from "@components/Timeline.astro";
-import RoadMapIntro from "@components/RoadMapIntro.astro";
 
 type LayoutType = "default" | "roadmapReader";
 
@@ -45,12 +44,29 @@ const pageTitle = `${SITE_TITLE} - ${title}`;
 <html lang="en" class="h-full antialiased">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={SITE_DESCRIPTION} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- HTML Meta Tags -->
     <title>{pageTitle}</title>
+    <meta name="description" content={SITE_DESCRIPTION} />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={SITE_DESCRIPTION} />
+    <meta property="og:image" content="/open-graph.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="web3roadmap.com" />
+    <meta property="twitter:url" content={SITE_URL} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={SITE_DESCRIPTION} />
+    <meta name="twitter:image" content="/open-graph.png" />
   </head>
   <body class="flex min-h-full flex-col bg-gray-950">
     <Fragment>
