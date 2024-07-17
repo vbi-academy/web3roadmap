@@ -1,0 +1,15 @@
+---
+import RoadmapTagList from "@components/RoadmapTagList.astro";
+
+interface Props {
+  roadmapTag: "skill-based" | "role-based" | "protocol";
+  title: string;
+}
+
+const { roadmapTag, title } = Astro.props;
+---
+
+<div class="relative py-2 space-y-2 border-t border-gray-700">
+  <h2 class="absolute -top-6 left-0 text-lg text-sky-300">{title}</h2>
+  <RoadmapTagList roadmapTag={roadmapTag} />
+</div>
