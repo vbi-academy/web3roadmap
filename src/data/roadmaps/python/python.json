@@ -1,0 +1,86 @@
+[
+  {
+    "phase_id": "1",
+    "phase_name": "Introduction",
+    "topics": [
+      {
+        "topic_id": "what-is-python",
+        "topic_name": "What is Python?",
+        "subtopics": [
+          {
+            "subtopic_id": "why-use-python",
+            "subtopic_name": "Why use Python?"
+          }
+        ]
+      },
+      {
+        "topic_id": "python-philosophy-and-zen",
+        "topic_name": "Python Philosophy and Zen"
+      },
+      {
+        "topic_id": "setting-up-the-development-environment",
+        "topic_name": "Setting Up the Development Environment",
+        "subtopics": [
+          {
+            "subtopic_id": "installing-python",
+            "subtopic_name": "Installing Python"
+          },
+          {
+            "subtopic_id": "ides-and-text-editors",
+            "subtopic_name": "IDEs and Text Editors"
+          },
+          {
+            "subtopic_id": "python-repl",
+            "subtopic_name": "Python REPL and Jupyter Notebooks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "phase_id": "2",
+    "phase_name": "Language Basics",
+    "topics": [
+      {
+        "topic_id": "syntax-and-semantics",
+        "topic_name": "Syntax and Semantics",
+        "subtopics": [
+          {
+            "subtopic_id": "variables-and-data-types",
+            "subtopic_name": "Variables and Data Types"
+          },
+          {
+            "subtopic_id": "control-flow-constructs",
+            "subtopic_name": "Control Flow Constructs"
+          },
+          {
+            "subtopic_id": "functions-and-modules",
+            "subtopic_name": "Functions and Modules"
+          },
+          {
+            "subtopic_id": "list-comprehensions",
+            "subtopic_name": "List Comprehensions"
+          }
+        ]
+      },
+      {
+        "topic_id": "object-oriented-programming",
+        "topic_name": "Object-Oriented Programming",
+        "subtopics": [
+          {
+            "subtopic_id": "classes-and-objects",
+            "subtopic_name": "Classes and Objects"
+          },
+          {
+            "subtopic_id": "inheritance-and-polymorphism",
+            "subtopic_name": "Inheritance and Polymorphism"
+          },
+          {
+            "subtopic_id": "magic-methods",
+            "subtopic_name": "Magic Methods"
+          }
+        ]
+      }
+    ]
+  }
+]
