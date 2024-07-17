@@ -2,12 +2,9 @@ name: Deploy Astro to Vercel
 
 on:
   push:
-    branches:
-      - main
-      - develop
-      - feature/*
+    branches: [workflows]
   pull_request:
-    branches: [main]
+    types: [opened, synchronize, reopened]
 
 jobs:
   deploy:
