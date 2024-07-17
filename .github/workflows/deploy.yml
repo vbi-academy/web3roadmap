@@ -11,6 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+
+      - name: Clear Git cache and reset
+        run: |
+          git rm -rf --cached .
+          git reset --hard
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -25,17 +32,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Debug - List directory structure and file contents
+      - name: List directory contents
         run: |
-          echo "Current directory structure:"
-          ls -R src
-          echo "Content of RoadmapCardList.astro:"
-          cat src/components/RoadmapCardList.astro
-          echo "Content of [roadmapId]/index.astro:"
-          cat src/pages/[roadmapId]/index.astro
-          echo "Content of modalStore file (if exists):"
-          cat src/stores/modalStore.ts || echo "modalStore.ts not found"
-          cat src/stores/modalStore.js || echo "modalStore.js not found"
+          echo "Contents of src/components:"
+          ls -la src/components/
 
       - name: Build project
         run: pnpm build
