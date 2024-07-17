@@ -4,16 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@stores/*": ["src/stores/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@lib/*": ["src/lib/*"]
-    }
+    "jsxImportSource": "react"
   },
   "exclude": ["node_modules", "dist"]
 }

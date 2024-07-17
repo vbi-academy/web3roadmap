@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useModalStore } from "@stores/modalStore";
-import arrowLeft from "@assets/icons/arrow-uturn-left-icon.svg";
-import { httpGet } from "@lib/http";
-import "./markdown-styles.css";
+import arrowLeft from "../../assets/icons/arrow-uturn-left-icon.svg";
 import processCustomTags from "./processCustomTags";
-import LoadingIcon from "@components/LoadingIcon";
+import { useModalStore } from "../../stores/modalStore";
+import { httpGet } from "../../lib/http";
+import LoadingIcon from "../LoadingIcon";
+import "./markdown-styles.css";
 
 const RoadmapModal: React.FC = () => {
   const { isOpen, roadmapId, topicId, closeModal } = useModalStore();

@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { SITE_URL } from "src/constants";
+import { SITE_URL } from "../constants";
 
 const robotsTxt = `
 User-agent: *

@@ -26,7 +26,4 @@ export default defineConfig({
       include: ["src/data/roadmaps/**/*.md"],
     },
   },
-  typescript: {
-    tsconfig: "./tsconfig.json",
-  },
 });

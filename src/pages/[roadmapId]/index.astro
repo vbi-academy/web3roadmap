@@ -1,11 +1,11 @@
 ---
 import type { Params } from "astro";
-import MainLayout from "@layouts/MainLayout.astro";
-import ContentWrapper from "@components/ContentWrapper.astro";
-import ArticleHeader from "@components/ArticleHeader.astro";
-import RoadmapModal from "@components/RoadmapModal/RoadmapModal";
-import { getRoadmapIds, type RoadmapFrontmatter } from "@lib/roadmap";
-import type { Phase, Subtopic, Topic } from "@lib/type";
+import { getRoadmapIds, type RoadmapFrontmatter } from "../../lib/roadmap";
+import type { Phase, Subtopic, Topic } from "../../lib/type";
+import MainLayout from "../../layouts/MainLayout.astro";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+import ContentWrapper from "../../components/ContentWrapper.astro";
+import RoadmapModal from "../../components/RoadmapModal/RoadmapModal";
 
 export async function getStaticPaths() {
   const roadmapIds = await getRoadmapIds();
@@ -92,7 +92,7 @@ if (error || !roadmapData) {
 </MainLayout>
 
 <script>
-  import { useModalStore } from "@stores/modalStore";
+  import { useModalStore } from "../../stores/modalStore";
 
   document.addEventListener("DOMContentLoaded", () => {
     const { openModal } = useModalStore.getState();

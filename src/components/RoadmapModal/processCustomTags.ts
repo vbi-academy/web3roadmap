@@ -1,4 +1,4 @@
-import githubIcon from "@assets/icons/github-icon.svg?raw";
+import githubIcon from "../../assets/icons/github-icon.svg?raw";
 
 const processCustomTags = (html: string): string => {
   const parser = new DOMParser();
