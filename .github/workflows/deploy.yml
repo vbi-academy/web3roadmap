@@ -11,6 +11,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: pnpm install 
+
+      - name: Clear TypeScript and Astro cache
+        run: |
+          rm -rf .astro
+          rm -rf tsconfig.tsbuildinfo
+          rm -rf node_modules/.vite
+
+      - name: Build project
+        run: pnpm  build
+
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
