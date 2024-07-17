@@ -1,31 +1,39 @@
 ---
-import { clsx } from "clsx";
-
 interface Props {
   href?: string;
-  className?: string;
+  class?: string;
   arrow?: boolean;
 }
 
-const { href, className, arrow, ...props } = Astro.props;
+const { href, class: className, arrow, ...props } = Astro.props;
 
-const buttonClass = clsx(
-  className,
-  "group relative isolate flex-none rounded-md py-1.5 text-[0.8125rem]/6 font-semibold text-white",
-  arrow ? "pl-2.5 pr-[calc(9/16*1rem)]" : "px-2.5"
-);
+const baseClasses = [
+  "group",
+  "relative",
+  "isolate",
+  "flex-none",
+  "rounded-md",
+  "py-1.5",
+  "text-[0.8125rem]/6",
+  "font-semibold",
+  "text-white",
+];
+
+const arrowClasses = arrow ? ["pl-2.5", "pr-[calc(9/16*1rem)]"] : ["px-2.5"];
+
+const buttonClasses = [...baseClasses, ...arrowClasses, className];
 ---
 
 {
   href ? (
-    <a href={href} class={buttonClass} {...props}>
+    <a href={href} class:list={buttonClasses} {...props}>
       <span class="absolute inset-0 rounded-md bg-gradient-to-b from-white/80 to-white opacity-10 transition-opacity group-hover:opacity-15" />
       <span class="absolute inset-0 rounded-md opacity-7.5 shadow-[inset_0_1px_1px_white] transition-opacity group-hover:opacity-10" />
       <slot />
       {arrow && <span aria-hidden="true">&rarr;</span>}
     </a>
   ) : (
-    <button class={buttonClass} {...props}>
+    <button class:list={buttonClasses} {...props}>
       <span class="absolute inset-0 rounded-md bg-gradient-to-b from-white/80 to-white opacity-10 transition-opacity group-hover:opacity-15" />
       <span class="absolute inset-0 rounded-md opacity-7.5 shadow-[inset_0_1px_1px_white] transition-opacity group-hover:opacity-10" />
       <slot />
