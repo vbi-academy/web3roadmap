@@ -23,4 +23,4 @@ fn main() {
 Resources:
 - [@official@Rust Language Documentation](https://www.rust-lang.org/learn)
   
-[@opensource@]()
+[@opensource@](https://github.com/openedu101/web3roadmap/blob/main/src/data/roadmaps/rust/content/what-is-rust.md)
