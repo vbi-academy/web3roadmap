@@ -4,7 +4,7 @@ import FixedSidebar from "@components/FixedSidebar/FixedSidebar.astro";
 import Intro from "@components/Intro.astro";
 import IntroFooter from "@components/IntroFooter.astro";
 import Timeline from "@components/Timeline.astro";
-import RoadMapIntro from "@components/RoadMapIntro.astro";
+import RoadmapIntro from "@components/RoadmapIntro.astro";
 
 import "@fontsource/poppins";
 import "@fontsource/poppins/100.css";
@@ -58,7 +58,7 @@ const pageTitle = `${SITE_TITLE} - ${title}`;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={SITE_DESCRIPTION} />
-    <meta property="og:image" content="/open-graph.png" />
+    <meta property="og:image" content={`${SITE_URL}/open-graph.png`} />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -66,7 +66,7 @@ const pageTitle = `${SITE_TITLE} - ${title}`;
     <meta property="twitter:url" content={SITE_URL} />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={SITE_DESCRIPTION} />
-    <meta name="twitter:image" content="/open-graph.png" />
+    <meta name="twitter:image" content={`${SITE_URL}/open-graph.png`} />
   </head>
   <body class="flex min-h-full flex-col bg-gray-950">
     <Fragment>
@@ -75,7 +75,7 @@ const pageTitle = `${SITE_TITLE} - ${title}`;
           type === "default" ? (
             <Intro slot="main" />
           ) : (
-            <RoadMapIntro
+            <RoadmapIntro
               icon={icon}
               title={title}
               description={description}
