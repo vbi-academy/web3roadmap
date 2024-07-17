@@ -15,17 +15,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'  
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8.15.4
-
+    
       - name: Install dependencies
-        run: pnpm install
+        run: npm run install
 
       - name: Build project
-        run: pnpm build
+        run: npm run build
 
       - name: Deploy to Vercel
         env:
