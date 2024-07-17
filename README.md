@@ -56,7 +56,7 @@ We welcome contributions from the community! Here are some guidelines to help yo
 4. Make sure your code lints.
 5. Issue a pull request with a comprehensive description of changes.
 
-For more detailed information on contributing, please read our [CONTRIBUTING.md](link-to-contributing-file) file.
+For more detailed information on contributing, please read our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Contact
 
