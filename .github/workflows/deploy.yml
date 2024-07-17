@@ -1,20 +1,49 @@
-name: Deploy CI
+name: Deploy Astro to Vercel
+
 on:
   push:
     branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Deploy to Vercel Action
-        uses: BetaHuhn/deploy-to-vercel-action@v1
+      - uses: actions/checkout@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          fetch-depth: 0  
+          
+      - name: Clear Git cache and reset
+        run: |
+          git rm -rf --cached .
+          git reset --hard
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: List directory contents
+        run: |
+          echo "Contents of src/components:"
+          ls -la src/components/
+
+      - name: Build project
+        run: pnpm build
+
+      - name: Deploy to Vercel
+        if: github.event_name != 'pull_request'
+        env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
