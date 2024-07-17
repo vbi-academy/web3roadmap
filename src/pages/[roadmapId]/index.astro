@@ -52,13 +52,13 @@ if (error || !roadmapData) {
     roadmapJsonData &&
       roadmapJsonData.map((phase: Phase) => (
         <>
-          <div class="space-y-7 sm:space-y-10">
+          <div class="space-y-2 sm:space-y-10 mb-14">
             <ArticleHeader step={phase.phase_name} />
             <ContentWrapper class="mb-8 text-white">
-              <ol class="relative border-s border-gray-200">
+              <ol class="relative">
                 {phase.topics.map((topic: Topic) => (
-                  <li class="mb-10 ms-4">
-                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+                  <li class="mb-5">
+                    {/* <div class="absolute w-2 h-2 bg-gray-500 rounded-full mt-2 -start-[4.5px] border border-gray-900 hidden md:block" /> */}
                     <h3
                       class="pt-1 mb-1 text-base font-normal leading-none text-white topic-title cursor-pointer hover:underline"
                       data-roadmap-id={roadmapId}

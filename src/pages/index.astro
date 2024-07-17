@@ -1,39 +1,13 @@
 ---
 import ContentWrapper from "@components/ContentWrapper.astro";
 import MainLayout from "@layouts/MainLayout.astro";
-import RoadmapTagList from "@components/RoadmapTagList.astro";
-import Icon from "@components/Icon.astro";
-import workIcon from "@assets/icons/work-icon.svg?raw";
-import circleStackIcon from "@assets/icons/circle-stack-icon.svg?raw";
-import cubeIcon from "@assets/icons/cube-icon.svg?raw";
+import RoadmapCardList from "@components/RoadmapCardList.astro";
 ---
 
 <MainLayout
-  ><ContentWrapper class="space-y-4 py-20 sm:space-y-10 sm:py-10 text-white">
-    <div class="space-y-2">
-      <div class="flex gap-2">
-        <Icon icon={circleStackIcon} class="w-6 h-6 text-white" />
-        <h2 class="text-lg">Skill Based Roadmap</h2>
-      </div>
-
-      <RoadmapTagList roadMapTag="skill-based" />
-    </div>
-    <div class="space-y-2">
-      <div class="flex gap-2">
-        <Icon icon={workIcon} class="w-6 h-6 text-white" />
-        <h2 class="text-lg">Role Based Roadmap</h2>
-      </div>
-
-      <RoadmapTagList roadMapTag="role-based" />
-    </div>
-
-    <div class="space-y-2">
-      <div class="flex gap-2">
-        <Icon icon={cubeIcon} class="w-6 h-6 text-white" />
-        <h2 class="text-lg">Protocol Roadmap</h2>
-      </div>
-
-      <RoadmapTagList roadMapTag="protocol" />
-    </div>
+  ><ContentWrapper class="space-y-10 py-10 sm:space-y-16 text-white">
+    <RoadmapCardList title="Skill Based Roadmaps" roadmapTag="skill-based" />
+    <RoadmapCardList title="Skill Based Roadmaps" roadmapTag="skill-based" />
+    <RoadmapCardList title="Skill Based Roadmaps" roadmapTag="skill-based" />
   </ContentWrapper></MainLayout
 >
