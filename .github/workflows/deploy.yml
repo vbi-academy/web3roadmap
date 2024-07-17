@@ -2,7 +2,7 @@ name: Deploy Astro to Vercel
 
 on:
   push:
-    branches: [workflows]
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all history for all branches and tags
-
+          fetch-depth: 0  
+          
       - name: Clear Git cache and reset
         run: |
           git rm -rf --cached .
