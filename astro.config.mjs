@@ -26,7 +26,7 @@ export default defineConfig({
       include: ["src/data/roadmaps/**/*.md"],
     },
   },
-  experimental: {
-    directRenderScript: true,
+  typescript: {
+    tsconfig: "./tsconfig.json",
   },
 });
