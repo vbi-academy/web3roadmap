@@ -2,14 +2,14 @@
 import { getRoadmapsByTag } from "../lib/roadmap";
 
 interface Props {
-  roadMapTag: string;
+  roadmapTag: string;
 }
 
-const { roadMapTag } = Astro.props;
-const roadmapsBySkill = await getRoadmapsByTag(roadMapTag);
+const { roadmapTag } = Astro.props;
+const roadmapsBySkill = await getRoadmapsByTag(roadmapTag);
 ---
 
-<div class="flex gap-2">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
   {
     roadmapsBySkill
       .filter((roadmapItem) => !roadmapItem.frontmatter.isHidden)
