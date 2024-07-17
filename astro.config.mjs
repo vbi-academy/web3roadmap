@@ -22,16 +22,6 @@ export default defineConfig({
         },
       },
     },
-    resolve: {
-      alias: {
-        "@components": path.resolve("./src/components"),
-        "@assets": path.resolve("./src/assets"),
-        "@layouts": path.resolve("./src/layouts"),
-        "@stores": path.resolve("./src/stores"),
-        "@scripts": path.resolve("./src/scripts"),
-        "@lib": path.resolve("./src/lib"),
-      },
-    },
     optimizeDeps: {
       include: ["src/data/roadmaps/**/*.md"],
     },
