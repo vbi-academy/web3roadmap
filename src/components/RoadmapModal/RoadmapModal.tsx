@@ -58,7 +58,7 @@ const RoadmapModal: React.FC = () => {
 
   return (
     <div
-      className={`fixed inset-0 bg-gray-950 bg-opacity-90 text-white overflow-auto transition-opacity duration-300 ${
+      className={`fixed inset-0 bg-gray-950 text-white overflow-auto transition-opacity duration-300 ${
         isOpen ? "opacity-100" : "opacity-0"
       }`}
     >
