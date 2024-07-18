@@ -5,5 +5,6 @@ description: "Master Rust programming with our comprehensive 2024 roadmap. From 
 tags: ["skill-based"]
 order: 1
 isHidden: false
-github: "https://github.com/"
+github: "https://github.com/rust-lang"
+documentationLink: "https://www.rust-lang.org/learn"    
 ---
