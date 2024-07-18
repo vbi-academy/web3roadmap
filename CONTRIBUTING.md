@@ -31,6 +31,7 @@ tags: [""]
 order: number
 isHidden: boolean
 github: ""
+documentationLink: ""
 ---
 ```
 
@@ -43,7 +44,8 @@ github: ""
   - `protocol`: For specific protocols (e.g., Algorand Smart Contract)
 - `order`: Leave blank for admin adjustment
 - `isHidden`: Usually set to `true` by default
-- `github`: GitHub link to the roadmap
+- `github`: If the project is open source, add it here
+- `documentationLink`: Link to project documentation
 
 #### Creating `{roadmapId}.json`
 
