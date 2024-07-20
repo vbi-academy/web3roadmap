@@ -1,86 +1,86 @@
 [
-    {
-        "phase_id": "1",
-        "phase_name": "Substrate",
-        "topics": [
-            {
-                "topic_id": "1-1-what-is-substrate",
-                "topic_name": "What is Substrate?",
-                "subtopics": [
-                    {
-                        "subtopic_id": "1-1-1-why-substrate",
-                        "subtopic_name": "Why Substrate?"
-                    }
-                ]
-            },
-            {
-                "topic_id": "1-2-substrate-node-architecture",
-                "topic_name": "Substrate Node Architecture",
-                "subtopics": [
-                    {
-                        "subtopic_id": "1-2-1-blockchain-basic",
-                        "subtopic_name": "Blockchain Basic"
-                    },
-                    {
-                        "subtopic_id": "1-2-2-client-and-runtime-architecture",
-                        "subtopic_name": "Client And Runtime Architecture"
-                    },
-                    {
-                        "subtopic_id": "1-2-3-consensus",
-                        "subtopic_name": "Consensus"
-                    }
-                ]
-            },
-            {
-                "topic_id": "1-3-FRAME",
-                "topic_name": "FRAME Runtime",
-                "subtopics": [
-                    {
-                        "subtopic_id": "1-3-1-what-is-frame-pallet",
-                        "subtopic_name": "What is FRAME pallet?"
-                    },
-                    {
-                        "subtopic_id": "1-3-2-rust-libraries",
-                        "subtopic_name": "Rust Libraries"
-                    }
-                ]
-            },
-            {
-                "topic_id": "1-4-substrate-development-tool",
-                "topic_name": "Substrate Development Tool"
-            }
+  {
+    "phase_id": "1",
+    "phase_name": "Substrate",
+    "topics": [
+      {
+        "topic_id": "what-is-substrate",
+        "topic_name": "What is Substrate?",
+        "subtopics": [
+          {
+            "subtopic_id": "why-substrate",
+            "subtopic_name": "Why Substrate?"
+          }
         ]
-    },
-    {
-        "phase_id": "2",
-        "phase_name": "Cumulus",
-        "topics": [
-            {
-                "topic_id": "2-1-develop-a-parachain",
-                "topic_name": "Develop a parachain",
-                "subtopics": [
-                    {
-                        "subtopic_id": "2-1-1parachain-architecture",
-                        "subtopic_name": "Parachain Architecture"
-                    },
-                    {
-                        "subtopic_id": "2-1-2-parachain-pallet",
-                        "subtopic_name": "Parachain Pallet"
-                    },
-                    {
-                        "subtopic_id": "2-1-3-relaychain-and-parachain",
-                        "subtopic_name": "Relaychain and Parachain"
-                    },
-                    {
-                        "subtopic_id": "2-1-4-cross-chain-message",
-                        "subtopic_name": "Cross-chain Message"
-                    }
-                ]
-            },
-            {
-                "topic_id": "2-2-cumulus-development-tool",
-                "topic_name": "Cumulus Development Tool"
-            }
+      },
+      {
+        "topic_id": "substrate-node-architecture",
+        "topic_name": "Substrate Node Architecture",
+        "subtopics": [
+          {
+            "subtopic_id": "blockchain-basic",
+            "subtopic_name": "Blockchain Basic"
+          },
+          {
+            "subtopic_id": "client-and-runtime-architecture",
+            "subtopic_name": "Client And Runtime Architecture"
+          },
+          {
+            "subtopic_id": "consensus",
+            "subtopic_name": "Consensus"
+          }
         ]
-    }
+      },
+      {
+        "topic_id": "FRAME",
+        "topic_name": "FRAME Runtime",
+        "subtopics": [
+          {
+            "subtopic_id": "what-is-frame-pallet",
+            "subtopic_name": "What is FRAME pallet?"
+          },
+          {
+            "subtopic_id": "rust-libraries",
+            "subtopic_name": "Rust Libraries"
+          }
+        ]
+      },
+      {
+        "topic_id": "substrate-development-tool",
+        "topic_name": "Substrate Development Tool"
+      }
+    ]
+  },
+  {
+    "phase_id": "2",
+    "phase_name": "Cumulus",
+    "topics": [
+      {
+        "topic_id": "develop-a-parachain",
+        "topic_name": "Develop a parachain",
+        "subtopics": [
+          {
+            "subtopic_id": "parachain-architecture",
+            "subtopic_name": "Parachain Architecture"
+          },
+          {
+            "subtopic_id": "parachain-pallet",
+            "subtopic_name": "Parachain Pallet"
+          },
+          {
+            "subtopic_id": "relaychain-and-parachain",
+            "subtopic_name": "Relaychain and Parachain"
+          },
+          {
+            "subtopic_id": "cross-chain-message",
+            "subtopic_name": "Cross-chain Message"
+          }
+        ]
+      },
+      {
+        "topic_id": "cumulus-development-tool",
+        "topic_name": "Cumulus Development Tool"
+      }
+    ]
+  }
 ]
