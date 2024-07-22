@@ -1,0 +1,129 @@
+[
+  {
+    "phase_id": "1",
+    "phase_name": "Algorand",
+    "topics": [
+      {
+        "topic_id": "what-is-algorand",
+        "topic_name": "What is Algorand?",
+        "subtopics": [
+          {
+            "subtopic_id": "why-algorand?",
+            "subtopic_name": "Why Algorand?"
+          },
+          {
+            "subtopic_id": "who-created-algo",
+            "subtopic_name": "Who created ALGO?"
+          },
+          {
+            "subtopic_id": "algorand-consensus",
+            "subtopic_name": "Algorand consesus"
+          },
+          {
+            "subtopic_id": "algorand-networks",
+            "subtopic_name": "Algorand networks"
+          }
+        ]
+      },
+      {
+        "topic_id": "algorand-virtual-machine",
+        "topic_name": "Algorand Virtual Machine",
+        "subtopics": [
+          {
+            "subtopic_id": "what-is-avm",
+            "subtopic_name": "What is AVM?"
+          },
+          {
+            "subtopic_id": "avm-architecture",
+            "subtopic_name": "AVM Architecture"
+          },
+          {
+            "subtopic_id": "how-to-program-AVM",
+            "subtopic_name": "What is TEAL?"
+          },
+          {
+            "subtopic_id": "what-is-teal",
+            "subtopic_name": "What is TEAL?"
+          },
+          {
+            "subtopic_id": "teal-architecture",
+            "subtopic_name": "TEAL Architecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "phase_id": "Algorand-layer-1-capabilities",
+    "phase_name": "Algorand layer-1 capabilities",
+    "topics": [
+      {
+        "topic_id": "algorands-fundamental",
+        "topic_name": "Algorands fundamentals",
+        "subtopics": [
+          {
+            "subtopic_id": "account",
+            "subtopic_name": "Account"
+          },
+          {
+            "subtopic_id": "transactions",
+            "subtopic_name": "Transaction"
+          }
+        ]
+      },
+      {
+        "topic_id": "Algorand-smart-contracts",
+        "topic_name": "Algorand Smart Contracts",
+        "subtopics": [
+          {
+            "subtopic_id": "What-is-a-smart-contract",
+            "subtopic_name": "What's a smart contract?"
+          },
+          {
+            "subtopic_id": "smart-contracts-vs-smart-signatures",
+            "subtopic_name": "Smart Signatures & Smart Contracts"
+          }
+        ]
+      },
+      {
+        "topic_id": "algorand-standard-assets",
+        "topic_name": "Algorand Standard Assets(ASA)",
+        "subtopics": [
+          {
+            "subtopic_id": "What-is-an-ASA?",
+            "subtopic_name": "What is an ASA?"
+          },
+          {
+            "subtopic_id": "non-fungible-token?",
+            "subtopic_name": "NFT - non fungible token"
+          },
+          {
+            "subtopic_id": "fungible-tokens",
+            "subtopic_name": "FT - Fungible tokens"
+          }
+        ]
+      }
+    ]
+  }
+  ,
+  {
+    "phase_id": "3",
+    "phase_name": "The Algorand Framework for Developers",
+    "topics": [
+      {
+        "topic_id": "algokit-20",
+        "topic_name": "AlgoKit 2.0",
+        "subtopics": [
+          {
+            "subtopic_id": "what-is-algokit",
+            "subtopic_name": "What is Algokit?"
+          },
+          {
+            "subtopic_id": "rust-libraries",
+            "subtopic_name": "Rust Libraries"
+          }
+        ]
+      }
+    ]
+  }
+]
