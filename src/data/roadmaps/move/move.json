@@ -1,0 +1,74 @@
+[
+    {
+      "phase_id": "1",
+      "phase_name": "Move roadmap",
+      "topics": [
+        {
+          "topic_id": "what-is-move",
+          "topic_name": "What is Move?",
+          "subtopics": [
+            {
+              "subtopic_id": "why-move",
+              "subtopic_name": "Why move?"
+            },
+            {
+              "subtopic_id": "similarities-between-rust-and-move",
+              "subtopic_name": "Similarities Between Rust and Move"
+            },
+            {
+              "subtopic_id": "the-differences-between-rust-and-move",
+              "subtopic_name": "The  Differences Between Rust and Move"
+            }
+          ]
+        },
+        {
+          "topic_id": "origins-of-move-language",
+          "topic_name": "Origins of Move Language",
+          "subtopics": [
+            {
+              "subtopic_id": "the-diem asscociation",
+              "subtopic_name": "The Diem Asscociation"
+            }
+          ]
+        }
+        ,
+        {
+          "topic_id": "move-powered-blockchains",
+          "topic_name": "Move-Powered Blockchains",
+          "subtopics": [
+            {
+              "subtopic_id": "sui-move-powered-blockchain",
+              "subtopic_name": "Sui Blockchain"
+            },
+            {
+              "subtopic_id": "aptos-move-powered-blockchain",
+              "subtopic_name": "Aptos Blockchain"
+            },
+            {
+              "subtopic_id": "movement-move-powered-blockchain",
+              "subtopic_name": "Movement Blockchain"
+            }
+          ]
+        },
+        {
+          "topic_id": "move-virtual-machine ",
+          "topic_name": "Move Virtual Machine (VM)",
+          "subtopics": [
+            {
+              "subtopic_id": "subsequent-blocks-of-transactions",
+              "subtopic_name": "The subsequent blocks of transactions"
+            },
+            {
+              "subtopic_id": "move-bytecode-verifier",
+              "subtopic_name": "Move bytecode verifier"
+            },
+            {
+              "subtopic_id": " move-intermediate-representation-compiler",
+              "subtopic_name": " Move intermediate representation (IR) compiler"
+            }
+          ]
+        }
+      ]  
+    }
+  ]
+  

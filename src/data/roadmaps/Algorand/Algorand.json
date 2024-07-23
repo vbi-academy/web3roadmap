@@ -39,7 +39,7 @@
           },
           {
             "subtopic_id": "how-to-program-AVM",
-            "subtopic_name": "What is TEAL?"
+            "subtopic_name": "How to program AVM?"
           },
           {
             "subtopic_id": "what-is-teal",
@@ -58,16 +58,26 @@
     "phase_name": "Algorand layer-1 capabilities",
     "topics": [
       {
-        "topic_id": "algorands-fundamental",
-        "topic_name": "Algorands fundamentals",
+        "topic_id": "account",
+        "topic_name": "Algorands Account",
         "subtopics": [
           {
-            "subtopic_id": "account",
-            "subtopic_name": "Account"
+            "subtopic_id": "algopy-account",
+            "subtopic_name": "Account on the Algorand network"
+          }
+        ]
+      },
+      {
+        "topic_id": "transaction",
+        "topic_name": "Transaction",
+        "subtopics": [
+          {
+            "subtopic_id": "payment-transaction",
+            "subtopic_name": "Payment Transaction"
           },
           {
-            "subtopic_id": "transactions",
-            "subtopic_name": "Transaction"
+            "subtopic_id": "group-transactions",
+            "subtopic_name": "Group Transactions"
           }
         ]
       },
@@ -79,6 +89,11 @@
             "subtopic_id": "What-is-a-smart-contract",
             "subtopic_name": "What's a smart contract?"
           },
+          {
+            "subtopic_id": "smart-contract-deployment",
+            "subtopic_name": "Smart Contract Deployment"
+          }
+          ,
           {
             "subtopic_id": "smart-contracts-vs-smart-signatures",
             "subtopic_name": "Smart Signatures & Smart Contracts"
@@ -100,6 +115,10 @@
           {
             "subtopic_id": "fungible-tokens",
             "subtopic_name": "FT - Fungible tokens"
+          },
+          {
+            "subtopic_id": "asset-lifecycle",
+            "subtopic_name": "The lifecycle for assets "
           }
         ]
       }
