@@ -48,7 +48,18 @@
           {
             "subtopic_id": "teal-architecture",
             "subtopic_name": "TEAL Architecture"
+          },
+          {
+            "subtopic_id": "algorand-smart-contracts",
+            "subtopic_name": "Algorand Smart Contracts (ASC1)"
           }
+        ]
+      },
+      {
+        "topic_id": "application-binary-interface",
+        "topic_name": "What is Arc4?",
+        "subtopics": [
+          
         ]
       }
     ]
@@ -90,14 +101,19 @@
             "subtopic_name": "What's a smart contract?"
           },
           {
-            "subtopic_id": "smart-contract-deployment",
-            "subtopic_name": "Smart Contract Deployment"
+            "subtopic_id": "smart-contract-storage",
+            "subtopic_name": "Smart contract storage"
+          },
+          {
+            "subtopic_id": "smart-contract-application",
+            "subtopic_name": "Smart contract high level"
           }
           ,
           {
-            "subtopic_id": "smart-contracts-vs-smart-signatures",
-            "subtopic_name": "Smart Signatures & Smart Contracts"
+            "subtopic_id": "smart-contract-deployment",
+            "subtopic_name": "Smart Contract Deployment"
           }
+          
         ]
       },
       {
