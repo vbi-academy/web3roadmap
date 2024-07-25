@@ -1,14 +1,11 @@
 
 # What is AVM ? 
 
-![Image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*anoOGTeH-6-mCgqhn0VugA.jpeg)
+![Image](/roadmap-images/algorand/1_anoOGTeH-6-mCgqhn0VugA.webp)
 
 The Algorand Virtual Machine (AVM) runs on every node and is essential for executing smart contracts on the Algorand blockchain network. 
 
 In the image above, the AVM as a Blackbox acts as the middleman between smart contracts and the Blockchain.
-
-
-
 
 
 # Resources:
