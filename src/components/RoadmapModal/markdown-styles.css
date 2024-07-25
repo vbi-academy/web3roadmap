@@ -169,6 +169,11 @@
     border: 0;
 }
 
+.markdown-content img {
+    border-radius: 8px;
+    margin: 12px 0 12px 0;
+}
+
 
 /* ======== */
 
